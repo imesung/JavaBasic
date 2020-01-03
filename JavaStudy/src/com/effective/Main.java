@@ -1,14 +1,7 @@
 package com.effective;
 
-import com.effective.enumStudy.EnumSingle;
-import com.effective.enumStudy.Gender;
-import com.effective.enumStudy.Menu;
-import com.effective.enumStudy.MenuImpl;
-import com.effective.extend.Car;
-import com.effective.extend.Tico;
-
-import java.util.Arrays;
-import java.util.List;
+import com.effective.inheritance.Car;
+import com.effective.inheritance.Tico;
 
 //class Book{}
 //class Book2{}
