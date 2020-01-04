@@ -23,10 +23,19 @@ public class Main {
     */
 
     public static void main(String[] args) {
-        Tico tico = new Tico();
-        Car car = new Car();
-        Car car2 =  tico;
-        Tico tico2 = (Tico)car;
+
+
+
+
+        Car ACar = new Car();
+        ACar.print();
+
+        Tico ATico = new Tico();
+        ATico.print();  //재정의한 메소드 출력
+
+        Car car = new Tico();
+        Tico tico = (Tico)car;
+        tico.print();
 
         /*List<Object> list = Arrays.asList(new Object(), new Book(), new Book2());
 
