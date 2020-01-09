@@ -13,14 +13,14 @@ public class EnumStudy {
         String gender;
         
         gender = EnumStudy.MALE;
-        gender = EnumStudy.FEMALE;
+        gender = "strVal";
     }
 }
 ```
 
 **상수를 사용했을 때 문제가 발생한다는 것을 찾을 수 있었다**
 
-- gender라는  String 변수는 처음 `"MALE"`이라는 변수로 고정되기를 원하는데, 다음 라인에서 `"FEMALE"`로 변경되는 것을 볼 수가 있다.
+- gender라는  String 변수는 처음 `"MALE"`이라는 변수로 고정되기를 원하는데, 다음 라인에서 `"strVal"`로 변경되는 것을 볼 수가 있다.
 
 **해결**
 
