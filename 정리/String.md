@@ -1,10 +1,10 @@
 ## String 사용? 미사용?
 
-### String은 메모리에 어떻게 저장되는가?
+### String은 메모리에 어떻게 저장되는가? 객체의 값은 변경가능 한가?
 
 - String 객체 대부분은 원시 타입으로 취급하므로 new 키워드를 사용할 필요가 없다.
 
-- Java에서 String은 특별한 참조 자료형이다. 다른 객체들과 마찬가지로 new 생성자를 이용해서 인스턴스를 만드록 heap영역에 올라가지만, 다른 참조형과는 다르게 한번 객체가 생성되면 해당 값은 변하지가 않는다.
+- Java에서 String은 특별한 참조 자료형이다. 다른 객체들과 마찬가지로 new 생성자를 이용해서 인스턴스를 만드록 heap영역에 올라가지만, 다른 참조형과는 다르게 **한번 객체가 생성되면 해당 값은 변하지가 않는다.**
 
   ```java
   String str = new String("cat");
@@ -15,6 +15,8 @@
 - 이 처럼 String 연산은 계속적으로 객체를 만들어내기 때문에 비효율적이다.
 
 - 이 를 해결하기 위해 나타난 것이 **String Constant pool**이다.
+
+
 
 **String Constant pool**
 
@@ -29,7 +31,7 @@ String str2 = "car";
 
 
 
-**intern**
+**intern**(인터닝이란)
 
 ```java
 String str1 = new String("ball");
