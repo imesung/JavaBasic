@@ -2,12 +2,14 @@ package com.effective.generic;
 
 class A {
     public int a = 1;
+    //메소드 리턴 타입에 제네릭 활용
     public <T extends String> void printA(T t) {
         System.out.println(t + " " + a);
     }
 }
 class B extends A {}
 class C extends B {}
+//클래스 생성 시 서브타입에 제네릭 활용
 class Test<T extends A> {
     private T t;
     public Test(T t) {
@@ -19,6 +21,7 @@ class Test<T extends A> {
 }
 
 public class WildCard {
+    //와일드 카드 활용하여 메소드 매개변수 제한
     public static void wildCardTest(Test<? extends B> test) {
         System.out.println(test.getClass());
     }
