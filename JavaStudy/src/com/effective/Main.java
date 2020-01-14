@@ -24,7 +24,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-
+        final int[] integer = {1,2,3};
+        integer[0] = 4;
+        System.out.println(integer[0]);
 
 
         Car ACar = new Car();
