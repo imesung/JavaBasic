@@ -77,6 +77,7 @@ System.out.println(str3 == str1.intern());	//true
 
 - **StringBuffer와 StringBuilder 공통점**
 
+  - String과는 다르게 mutable(변경가능)하다. 즉, 클래스는 한번만 만드므로, 문자열 연산이 많을 시 사용하면 성능이 좋다.
   - String과는 다르게 문자열 연산으로 인해 객체 공간이 부족한 경우에는 버퍼 크기를 늘려 유연하게 동작한다.
   - 서로 동일한 메소드를 가지고 있다.
 
@@ -86,14 +87,16 @@ System.out.println(str3 == str1.intern());	//true
 
   - **StringBuffer**는 메소드별로 Synchronized Keyword가 존재하여 **멀티 스레드 환경에서도 동기화를 지원**하나, **StringBuilder**는 **동기화를 보장하지 않는다.**
   - 그로인해, 멀티 스레드 환경이라면 StringBuffer를 사용하고 단일 스레드 환경이라면 StringBuilder를 사용하는 것이 좋다. **단일 스레드에서 StringBuffer를 사용해도 되나 StringBuilder에 비해 성능이 좋지 않다.**
+  - **why 성능?** StringBuilder는 동기화를 고려하지 않기 때문에 단일 스레드 환경에서는 StringBuffer에 비해 연산처리가 빠른 것이다.
 
 
 
 **결과적으로,**
 
-**String은 짧은 문자열을 연산 시 사용한다.**
+**String**은 불변객체이기 때문에 문자열 연산이 많은 프로그래밍이 필요할 시 연속적으로 객체를 생성하므로 성능은 떨어지나, 조회가 많은 환경이나 멀티 스레드 환경에서는 유리하다.
 
-**StringBuffer**는 스레드에 안전한 프로그램이 필요할 때나, 개발 중인 시스템이 스레드에 안전한지 모르는 경우에 사용하면 좋다.
+**StringBuffer와 StringBuilder**는 문자열 연산이 자주 발생할 때 추가적인 객체 생성 없이 문자열 변경이 가능하므로 성능적으로 유리히다.
+
+**StringBuffer**는 스레드에 안전한 프로그램이 필요할 때나, 개발 중인 시스템이 스레드에 안전한지 모르는 경우에 사용하면 좋다. (Thread-safe)
 
 **StringBuilder**는 스레드에 안전한지의 여부가 전혀 관계없는 프로그램을 개발할 때 사용하면 좋다.
-
