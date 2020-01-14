@@ -7,7 +7,7 @@
 - Java에서 String은 특별한 참조 자료형이다. 다른 객체들과 마찬가지로 new 생성자를 이용해서 인스턴스를 만들고 heap영역에 올라가지만, 다른 참조형과는 다르게 **한번 객체가 생성되면 해당 값은 변하지가 않는다.**
 
   ```java
-  String str = new String("cat");
+  String str = new String("Cat");
   str = str+str;
   //1. str은 cat이라는 문자열을 참조
   //2. str+str 연산 진행으로 인해 "catcat" 문자열 만들어짐
