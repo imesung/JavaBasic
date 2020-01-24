@@ -21,5 +21,17 @@ public class PQMain {
         while(!priorityQueue.isEmpty()) {
             System.out.println(priorityQueue.poll());
         }
+
+
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        pq.offer(1);
+        pq.offer(3);
+        pq.offer(2);
+        pq.offer(14);
+        while(!pq.isEmpty()) {
+            System.out.println(pq.poll());
+        }
+
+
     }
 }

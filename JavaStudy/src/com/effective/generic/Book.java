@@ -1,6 +1,6 @@
 package com.effective.generic;
 
-public class Book {
+public class Book<T> {
     private Object obj;
     public Object get() {
         return obj;
