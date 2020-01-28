@@ -22,7 +22,5 @@ public class BuildPtMain {
         String obj = "";
         obj.equals("");
 
-        Thre
-
     }
 }
