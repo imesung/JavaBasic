@@ -20,7 +20,7 @@ Hash는 데이터 삽입, 삭제시 기존 데이터를 밀거나 채우는 작�
 
 
 
-### Hash 메소드
+### Hash 메소드(Hash 함수)
 
 Hash는 Hash Table을 이용하여 데이터를 저장한다.
 
@@ -79,6 +79,6 @@ Hash는 Hash Table을 이용하여 데이터를 저장한다.
 
 
 
-
+**참고**
 
 https://hyeonstorage.tistory.com/265
