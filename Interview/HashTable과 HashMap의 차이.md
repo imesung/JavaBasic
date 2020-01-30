@@ -9,7 +9,7 @@ Map을 구현하는 방식 즉, 알고리즘도 다양한데 TreeMap의 경우 t
 그렇다면, 같은 알고리즘을 사용하는 HashMap과 HashTable은 무슨 차이가 있는 것인가?!
 
 
-
+## 
 **차이점**
 
 - HashTable은 동기화가 되는 반면, HashMap은 비동기화이다. 이로 인해서 단일 스레드 환경에서는 HashMap을 사용하고 멀티 스레드 환경에서는 HashTable을 사용한다.
@@ -31,13 +31,13 @@ Map을 구현하는 방식 즉, 알고리즘도 다양한데 TreeMap의 경우 t
 - HashTable은 Null Key나 Value를 허용하지 않는 반면, HashMap은 Null Key와 Value를 허용한다.
 
 
-
+## 
 **ConCurrentHashMap**
 
 - HashMap을 Thread-safe하기 위해 만든 클래스가 ConcurrentHashMap이다. 하지만 HasMap과는 다르게 Key와 Value에 Null을 허용하지 않는다. 또한, putIfAbsent()라는 메소드를 가지고 있다.
 
 
-
+## 
 ### **소스를 통해 하나씩 살펴보자**
 
 **HashTable은 put과 get 같은 주요 메소드에 synchronized 키워드가 선언되어 있다. 또한, Key와 Value에는 Null을 허용하지 않는다.**
@@ -85,7 +85,7 @@ public synchronized V get(Object key) {	//synchronized 키워드로 동기화 �
 ~~~
 
 
-
+## 
 **HashMap은 주요 메소드에 synchronized가 없다. 또한 HashTable과 다르게 Key와 Value에 Null을 허용한다.**
 
 ~~~java
@@ -120,7 +120,7 @@ static class Node<K, V> implements Entry<K, V> {
 ~~~
 
 
-
+## 
 **ConcurrentHashMap은 HashMap을 Thread-safe하게 만든 클래스인데, HashMap과는 다르게 Key와 Value에 Null을 허용하지 않는다. 또한, putIfAbsent 메소드를 가지고 있다.**
 
 ~~~java
@@ -151,7 +151,7 @@ public static void main(String[] args) {
 ~~~
 
 
-
+## 
 **자주 사용하는 다른 메소드**
 
 - clear()
@@ -166,7 +166,7 @@ public static void main(String[] args) {
   - 해당 컬렉션의 엔트리 또는 세그먼트 사이즈를 반환한다.
 
 
-
+## 
 ### Multi Threads
 
 우리는 위 세 종류의 같은 점과 다른 점 모두를 확인했는데, 중점적으로 본 것은 **동기화**부분이다.
@@ -237,7 +237,7 @@ public class MultiThreadsTest {
 ~~~
 
 
-
+## 
 **실행 결과**
 
 ![image](https://user-images.githubusercontent.com/40616436/73461819-1f86da00-43be-11ea-8daf-8028158d4d25.png)
