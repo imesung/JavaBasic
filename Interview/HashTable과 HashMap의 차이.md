@@ -12,6 +12,8 @@ Map을 구현하는 방식 즉, 알고리즘도 다양한데 TreeMap의 경우 t
 
 **차이점**
 
+- HashTable에는 hash 함수가 없는 반면, HashMap에는 hash 함수가 존재한다.
+
 - HashTable은 동기화가 되는 반면, HashMap은 비동기화이다. 이로 인해서 단일 스레드 환경에서는 HashMap을 사용하고 멀티 스레드 환경에서는 HashTable을 사용한다.
 
   - HashTable은 멀티 스레드 환경에서 메소드 호출 전 스레드간의 동기화 락을 통해 동기성이 보장되므로 data의 무결성을 보장해주는 것이다.
