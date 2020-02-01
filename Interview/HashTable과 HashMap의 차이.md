@@ -1,5 +1,11 @@
 ## HashMap과 HashTable 차이
 
+HashTable과 HashMap은 Java API의 이름이다. HashTable은 JDK1.0부터 있었고, HashMap은 Java2에서 처음 선보인 API이다.
+
+둘다 제공하는 기능은 같지만 **HashMap은 보조해시함수를 사용**하기 때문에 **보조해시함수를 사용하지 않는 HashTable**보다 **해시 충돌이 덜 발생**할 수 있다.
+
+HashTable의 구현은 거의 변화가 없는 반면, HashMap은 지속적으로 개선되어 왔다. 
+
 HashMap과 HashTable은 Key와 Value쌍을 쓰고, Map 인터페이스를 Implements한다.
 
 이 뿐만 아니라 Java 내에서 Key와 Value 쌍을 지원하는 대부분 클래스는 Map을 구현하게 된다.
@@ -32,14 +38,126 @@ Map을 구현하는 방식 즉, 알고리즘도 다양한데 TreeMap의 경우 t
 
 - HashTable은 Null Key나 Value를 허용하지 않는 반면, HashMap은 Null Key와 Value를 허용한다.
 
-
 ## 
 **ConCurrentHashMap**
 
 - HashMap을 Thread-safe하기 위해 만든 클래스가 ConcurrentHashMap이다. 하지만 HasMap과는 다르게 Key와 Value에 Null을 허용하지 않는다. 또한, putIfAbsent()라는 메소드를 가지고 있다.
 
 
+
 ## 
+
+### HashMap의 해시 충돌 해결
+
+이전 포스팅에서 해시 충돌 해결법을 살펴봤는데, HashMap의 해시 충돌 해결법은 **Separate Channing(분리연결법)**이다.
+
+그 이유는 일반적인 배열(개방연결법)에서 데이터를 삭제할 때 처리가 효율적이기 어려운데 HashMap에서는 이 일이 빈번하게 일어나기 때문이다. 또한 개방연결법을 사용하게 되면 해시 버킷을 채운 밀도가 높아질수록 Worst Case(O(M)) 발생 빈도가 더 높아진다.
+
+반면, 분리연결법은 사용하면 해시충돌이 잘 발생하지 않도록 '조정'이 가능하다.
+
+
+
+**Java 8의 HashMap**
+
+HashMap의 put() java7과 java8이 서로 다르게 구현되어 있지만 결론적으로 구현 알고리즘은 동일하다.
+
+- Java 7에서는 해시 함수 값이 균등 분포 상태라고 하면 get() 호출에 대한 기댃값은 E(N/M)이다. 하지만 Java 8에서는 E(logN/M)을 볼수 있다.
+
+  - 그 이유는 Java 8에서는 데이터 개수가 많아지면 분리연결법에서 **링크드 리스트 대신 트리를 사용하기 때문이다.**
+
+- 그럼 항상 링크드리스트 대신 트리를 사용하는 것이 좋은가? 그것은 아니다.
+
+  ~~~java
+  static final int TREEIFY_THRESHOLD = 8;
+  static final int UNTREEIFY_THRESHOLD.= 6; 
+  ~~~
+
+  - 만약 해시 버킷에 8개의 키-값 쌍이 모이면 **링크드 리스트를 트리로 변경** 한다.
+
+  - 만약 해시 버킷에 6개의 키-값 쌍이 모이면 **다시 링크드 리스트로 변경** 한다.
+    - 즉 하나의 해시 버킷에 할당된 키-값 쌍의 개수를 보고 결정한다.
+    - 이유는 데이터가 적을 땐 링크드리스트가 성능상 좋고 많을 땐 트리가 좋기 때문이다.
+      - 데이터가 많을 때 링크드리스트를 사용하게 되면 일부 해시 버킷에 데이터가 집중될 수 있기 때문인다.
+
+- Java 8 HashMap에서는 Entry 클래스 대신 Node 클래스를 사용한다.
+
+  - 링크드 리스트 대신 트리를 사용할 수 있도록 하위 클래스인 TreeNode가 있기 때문에 Node 클래스를 사용한다.
+
+- Java8 에서 사용하는 트리는 **Red-Black Tree** 인데, Java Collection Framwork의 TreeMap가 구현이 거의 같다.
+
+  - 트리 순회 시 대소 판단은 해시 함수 값이 되는데, 보통 해시 값을 대소 판단 기준을 사용하게 되면 Total Ordering문제가 생기지만 Java 8 HashMap에서는 이를 **tieBreakOrder()**로 해결한다.
+
+  ~~~java
+  static int tieBreakOrder(Object a, Object b) {
+    // TreeNode에서 어떤 두 키의comparator 값이 같다면 서로 동등하게 취급된다.
+    // 그런데 어떤 두 개의 키의 hash 값이 서로 같아도 이 둘은 서로 동등하지 
+    // 않을 수 있다. 따라서 어떤 두 개의 키에 대한 해시 함수 값이 같을 경우, 
+    // 임의로 대소 관계를 지정할 필요가 있는 경우가 있다. 
+  }
+  ~~~
+
+
+
+**해시 버킷 동적 확장**
+
+HashMap은 키-값 쌍 데이터 개수가 일정 개수 이상이 되면 해시 버킷의 개수를 **두 배**로 늘린다. 이렇게 해시 버킷의 개수를 늘리면 값도 작아져서 해시 출돌을 방지할 수 있다.
+
+해시 버킷의 기본값은 16이고 데이터의 개수가 임계점(load factor * 현재 해시 버킷 개수)에 이를 때마다 두배씩 증가한다. **버킷의 최대개수는 2^30개이다.**
+
+버킷의 개수가 증가할 때마다 모든 키-값의 데이터를 읽어 새로운 분리연결법을 구성해야하는 문제가 발생하는데 이때는, **HashMap 생성자의 인자로 해시 버킷 개수를 지정할 수 있는데, 저장될 데이터의 개수가 어느정도 예측 가능한 경우에는 이를 지정하여 불필요한 분리연결법을 재구성하지 않을 수 있다.**
+
+그런데 이렇게 해시 버킷 크기를 두배로 확장하는 것에는 결정적인 문제가 있는데, **해시 버킷의 개수 M이 2^a의 형태이기 때문에 int index = X.hashCode() % M을 계산할 때 X.hashCode()의 값이 2의 배수가 나타날 시 index 값이 동일하게 나타날 수 있다.**
+
+이로 인해 **보조 해시 함수**가 필요하다.
+
+
+
+**보조 해시 함수**
+
+int index = X.hashCode() % M를 계산할 때 M값이 소수일 때 index 값 분포가 가장 균등하게 나타난다.
+
+즉, 보조 해시 함수를 사용하여 M값을 소수로 만들도록 하는 것이다.
+
+보조 해시 함수는 JDK1.4에서 처음 등장했고, Java 5~7과 Java 8과 다른 방식을 사용한다.
+
+~~~java
+//Java 5~7 보조 해시 함수
+final int hash(Object k) {  
+  // Java 7부터는 JRE를 실행할 때, 데이터 개수가 일정 이상이면
+  // String 객체에 대해서 JVM에서 제공하는 별도의 옵션으로
+  // 해시 함수를 사용하도록 할 수 있다.
+  // 만약 이 옵션을 사용하지 않으면 hashSeed의 값은 0이다.
+  int h = hashSeed;
+  if (0 != h && k instanceof String) {
+    return sun.misc.Hashing.stringHash32((String) k);
+  }
+  h ^= k.hashCode();
+  // 해시 버킷의 개수가 2a이기 때문에 해시 값의 a비트 값만을 
+  // 해시 버킷의 인덱스로 사용한다. 따라서 상위 비트의 값이 
+  // 해시 버킷의 인덱스 값을 결정할 때 반영될 수 있도록
+  // shift 연산과 XOR 연산을 사용하여, 원래의 해시 값이 a비트 내에서 
+  // 최대한 값이 겹치지 않고 구별되게 한다.
+  h ^= (h >>> 20) ^ (h >>> 12);
+  return h ^ (h >>> 7) ^ (h >>> 4);
+}
+
+//Java 8 보조 해시 함수
+static final int hash(Object key) {
+  int h; return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16); 
+}
+~~~
+
+Java 8이 더욱 단순해진 이유는,
+
+- Java 8에서는 해시 충돌이 많이 발생하면 링크드리스트 대신 트리를 사용하고 있다.
+- **최근 해시 함수는 균등 분포가 잘 되게 만들어지는 경향이 있어 Java 7의 보조 해시 함수의 역할이 크지가 않다.**
+
+개념상 해시 버킷 인덱스를 계산할 때는 int index = X.hashCode() % M 대신 1 << a-1 과 비트 논리곱(AND, &) 연산을 사용하면 수행이 훨씬 빠르다.
+
+
+
+## 
+
 ### **소스를 통해 하나씩 살펴보자**
 
 **HashTable은 put과 get 같은 주요 메소드에 synchronized 키워드가 선언되어 있다. 또한, Key와 Value에는 Null을 허용하지 않는다.**
