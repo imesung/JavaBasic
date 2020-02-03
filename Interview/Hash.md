@@ -9,7 +9,7 @@ ArrayList 대신 LinkedList를 사용하면 삽입, 삭제를 진행할 때 인�
 이러한 LinkedList의 한계를 극복하기 위해 **Hash**가 등장했다.
 
 
-
+## 
 ### Hash의 기본개념
 
 Hash는 내부적으로 **배열**을 사용하여 데이터를 저장하여 **빠른 검색 속도**를 갖는다.
@@ -19,7 +19,7 @@ Hash는 데이터 삽입, 삭제시 기존 데이터를 밀거나 채우는 작�
 이 때 Hash가 내부적으로 사용하는 배열을 **Hash Table(배열)**이라고 하며 크기에 따라 성능차이가 난다.
 
 
-
+## 
 ### **해시 분포와 해시 충돌**
 
 동일하지 않은 객체 X와 Y가 있는데, X.equals(Y)가 false일 때 X.hashCode() == Y.hashCode()도 false면 이 때 사용하는 해시 함수는 **완전 해시 함수**라고 한다.
@@ -45,6 +45,8 @@ HashMap에서 사용하는 hashCode()의 반환값은 int타입인데 int 타입
 
 따라서 다음과 같이 객체에 대한 해시 코드의 나머지 값을 이용해서 해시 버킷 인덱스를 구성한다.
 
+
+## 
 **해시 버킷 : 해시가 저장되어 있는 슬롯을 말한다.**
 
 ~~~java
@@ -56,7 +58,7 @@ int index = X.hashCode() & M;
 이렇게 해시가 충돌될 때 해결하는 방법 두 가지가 있는데, 분리연결법(SeparateChaining)과 개방연결법(Open Adressing)이다.
 
 
-
+## 
 **Hash 내부 구조 및 해시 버킷의 구조를 살펴보자**
 
 ![image](https://user-images.githubusercontent.com/40616436/73587456-6af4d180-44ff-11ea-8912-8436826e49ac.png)
@@ -68,7 +70,7 @@ int index = X.hashCode() & M;
 ## Hash Method 구현 방법 및 해시 충돌 해결 예
 
 
-
+## 
 ### Hash Method 구현 방법
 
 - 데이터의 고유한 **hashCode를 구한 뒤 hashCode를 테이블의 크기로 나머지 연산**을 하고 그 결과를 해당 데이터의 인덱스로 사용하는 것이다.
@@ -93,7 +95,7 @@ int index = X.hashCode() & M;
   - 하지만 이 방법도 충돌이 줄이기 위한 방법이지 해결을 위한 방법이 아니다.
 
 
-
+## 
 ### hashCode Index의 충돌 해결방법
 
 충돌 해결방법으로는 두가지가 있다. **개방주소법**과 **분리연결법**
@@ -112,12 +114,13 @@ int index = X.hashCode() & M;
 
 ![image](https://user-images.githubusercontent.com/40616436/73239309-12f85b00-41df-11ea-81a8-7b251c4a68f1.png)
 
+
 **개방주소법**
 
 분리연결법과(배열과 LinkedList)는 다르게 배열만 사용하고 인덱스가 겹칠 경우에는 해당 인덱스의 옆 인덱스에 저장하는 방식이다..(일반 배열 형태이다.)
 
 
-
+## 
 **해시 충돌 장단점**
 
 개방주소법은 연속된 공간에 데이터를 저장하기 때문에 캐시효율이 높다.
@@ -133,7 +136,7 @@ int index = X.hashCode() & M;
 
 
 
-
+## 
 **참고**
 
 https://hyeonstorage.tistory.com/265
