@@ -2,7 +2,7 @@ package com.effective.boxing;
 
 import java.util.Comparator;
 
-public class WeaknessOfBoxing {
+public class WeaknessOfBoxing extends Boxing{
 
     //2.
     static Integer i;
