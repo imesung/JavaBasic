@@ -1,5 +1,7 @@
 package com.effective.equalsItems;
 
+import java.util.HashMap;
+import java.util.Objects;
 import java.util.Set;
 
 class CounterPointTest {
@@ -16,6 +18,12 @@ class CounterPointTest {
 
 
     public static void main(String[] args) {
+
+        CompositionPoint cp = new CompositionPoint(1, 2);
+        Point pt = new Point(1, 2);
+        System.out.println(cp.equals(pt));
+
+
         Point point = new Point(1,0);
         CounterPoint point1 = new CounterPoint(1,0);
 
@@ -24,5 +32,12 @@ class CounterPointTest {
 
         System.out.println(b);
         System.out.println(b1);
+
+        String str = "ss";
+        boolean abc = str.equals("bb");
+        HashMap<String, Integer> hs = new HashMap<>();
+        hs.put("1", 1);
+        hs.get("1");
+        Objects.hash("", "", "");
     }
 }

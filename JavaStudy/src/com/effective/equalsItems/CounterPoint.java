@@ -1,4 +1,18 @@
 package com.effective.equalsItems;
 
-public class CounterPoint {
+import org.w3c.dom.css.Counter;
+
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class CounterPoint extends Point{
+    private static final AtomicInteger counter = new AtomicInteger();
+
+    public CounterPoint(int x, int y) {
+        super(x, y);
+        counter.incrementAndGet();
+    }
+
+    public static int numberCreated() {
+        return counter.get();
+    }
 }
