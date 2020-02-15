@@ -5,10 +5,10 @@ public class MyFinal {
     public static void main(String args[]) {
         final MyFinal t1 = new MyFinal();
         MyFinal t2 = new MyFinal();
-        //t1 = t2;    //컴파일 에러 발생
+        //t = t2;    //컴파일 에러 발생
 
-        System.out.println(t1.notFinal);
+        System.out.println("final 클래스의 변수 : " + t1.notFinal);
         t1.notFinal = 20;
-        System.out.println(t1.notFinal);
+        System.out.println("final 클래스의 변수 수정 : " + t1.notFinal);
     }
 }
