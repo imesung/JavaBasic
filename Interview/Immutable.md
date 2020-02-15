@@ -31,7 +31,7 @@ Immutable Class는 변경이 불가능한 것이지 재할당은 가능하다. (
 
 - 멀티 스레드 환경에서 thread-safe가 가능하다.
 - 안전한 공유와 재사용이 가능하기 때문에 캐시를 사용하여 성능향상과 메모리 효율을 도모한다.
-- ![IMG_68583BBA44F9-1 2](/Users/mesung/Downloads/IMG_68583BBA44F9-1 2.jpeg)
+- ![image](https://user-images.githubusercontent.com/40616436/74584692-7fb18900-5018-11ea-8cb4-861f7e3c71da.png)
 
 
 
