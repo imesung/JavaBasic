@@ -56,7 +56,7 @@ public class MyStaticClass {
 
   - 그로인해, static 변수를 **클래스 변수**라고 칭하는 것이다.
 
-  - 메소드에는 static 변수를 선언할 수 없다. 
+  - 메소드에는 static 변수를 선언할 수 없다. (단, static 메소드에서는 가능하다.)
 
 - static 변수 및 블록은 선언되어 있는 순서대로 실행된다.
 
