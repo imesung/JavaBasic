@@ -31,6 +31,7 @@ public class MyStaticClass {
   }
 
   public MyStaticClass() {
+
     System.out.println("new MyStaticClass");
   }
 }
