@@ -5,7 +5,7 @@ static은 **컴파일러에 의해 .java에서 .class 파일로 로드될 시 �
 *이런 이유로, **객체가 heap영역 메모리에 올라가기 전에 호출해서 사용할 수 있는 것이다.***
 
 
-
+## 
 **static 적용 지점**
 
 - 블록
@@ -14,7 +14,7 @@ static은 **컴파일러에 의해 .java에서 .class 파일로 로드될 시 �
 - 중첩 클래스
 
 
-
+## 
 **static block**
 
 - **해당 객체가 new를 통해 인스턴스화 될 때 최초 한번만 호출한다.**
@@ -31,6 +31,7 @@ public class MyStaticClass {
   }
 
   public MyStaticClass() {
+
     System.out.println("new MyStaticClass");
   }
 }
@@ -49,12 +50,10 @@ public class MyStaticClass {
 - MyStaticClass.a로 인해 MyStaticClass의 Static Block을 호출하게 되는 것이다.
 
 
-
+## 
 **static variables**
 
 - static 변수는 Class 수준에서만 선언할 수 있다.
-
-  - 그로인해, static 변수를 **클래스 변수**라고 칭하는 것이다.
 
   - 메소드에는 static 변수를 선언할 수 없다. (단, static 메소드에서는 가능하다.)
 
@@ -89,7 +88,7 @@ public class MyStaticClass {
   ![image](https://user-images.githubusercontent.com/40616436/74587172-bd231000-5032-11ea-8c7e-4394602b751a.png)
 
 
-
+## 
 **static method**
 
 - static 메소드를 호출할 때는 호출하는 메소드도 static 메소드여야 한다.
@@ -122,7 +121,7 @@ public class MyStaticClass {
   ~~~
 
 
-
+## 
 **static 변수와 static 메소드는 언제 사용할까?**
 
 예를 들어, 학교에 학생들을 추가한다고 생각해보자.
@@ -175,7 +174,7 @@ public static void main(String [] a) {
 ![image](https://user-images.githubusercontent.com/40616436/74587509-b4343d80-5036-11ea-893b-ac798d2d55bc.png)
 
 
-
+## 
 **static 중첩 클래스(내부 클래스)**
 
 Java에서 최상위 클래스를 static으로 만들수는 없다. 하지만 클래스를 static으로 만들수는 있다.
