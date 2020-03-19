@@ -1,6 +1,7 @@
 package com.interview.finalStudy;
 
 public class MyFinal {
+    public static String share = "";
     int notFinal = 10;
     public static void main(String args[]) {
         final MyFinal t1 = new MyFinal();
