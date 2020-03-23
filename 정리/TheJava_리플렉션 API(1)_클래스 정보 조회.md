@@ -66,4 +66,67 @@ public class Book {
    }
    ~~~
 
+   <img src="https://user-images.githubusercontent.com/40616436/77340258-6070ee80-6d70-11ea-8f91-d55d0217e022.png" alt="image" style="zoom:50%;" />
+
+   
+
 2. 접근제한자에 상관없이 모든 필드를 가져오자
+
+   ~~~java
+   public static void main( String[] args ) throws ClassNotFoundException {
+     Class<Book> bookClass = Book.class;
+   
+     //getDeclaredFields는 접근제한자에 상관없이 모든 필드를 가져온다.
+     Arrays.stream(bookClass.getDeclaredFields()).forEach(System.out::println);
+   }
+   ~~~
+
+   <img src="https://user-images.githubusercontent.com/40616436/77340301-754d8200-6d70-11ea-8d99-890b25ae2fd9.png" alt="image" style="zoom:50%;" />
+
+   
+
+3. 접근제한자에 상관없이 모든 필드의 값을 가져와보자(**Error**)
+
+~~~java
+public static void main( String[] args ) throws ClassNotFoundException {
+  Class<Book> bookClass = Book.class;
+
+  Book book = new Book();
+  Arrays.stream(bookClass.getDeclaredFields()).forEach(f -> {
+    try {
+      System.out.printf("%s %s\n", f, f.get(book));
+    } catch (IllegalAccessException e) {
+      e.printStackTrace();
+    }
+  });
+}
+~~~
+
+<img src="https://user-images.githubusercontent.com/40616436/77340707-091f4e00-6d71-11ea-9219-46fef4c28a3c.png" alt="image" style="zoom:50%;" />
+
+<img src="https://user-images.githubusercontent.com/40616436/77340773-20f6d200-6d71-11ea-834e-0f5e636a6c0d.png" alt="image" style="zoom:50%;" />
+
+- public은 정상적으로 필드값을 가져오나 private은 접근이 불가능하다. 이때는 어떻게 해야할까?
+
+
+
+4. 접근제한자에 상관없이 모든 필드의 값을 가져와보자(**Normal**)
+
+~~~java
+public static void main( String[] args ) throws ClassNotFoundException {
+  Class<Book> bookClass = Book.class;
+
+  Book book = new Book();
+  Arrays.stream(bookClass.getDeclaredFields()).forEach(f -> {
+    try {
+      //모든 접근제한자 접근 
+      f.setAccessible(true);
+
+      System.out.printf("%s %s\n", f, f.get(book));
+    } catch (IllegalAccessException e) {
+      e.printStackTrace();
+    }
+  });
+}
+~~~
+
