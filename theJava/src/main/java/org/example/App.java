@@ -10,7 +10,13 @@ public class App {
     public static void main( String[] args ) throws ClassNotFoundException {
         Class<Book> bookClass = Book.class;
 
-        //getDeclaredFields는 접근제한자에 상관없이 모든 필드를 가져온다.
-        Arrays.stream(bookClass.getDeclaredFields()).forEach(System.out::println);
+        Book book = new Book();
+        Arrays.stream(bookClass.getDeclaredFields()).forEach(f -> {
+            try {
+                System.out.printf("%s %s\n", f, f.get(book));
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        });
     }
 }
