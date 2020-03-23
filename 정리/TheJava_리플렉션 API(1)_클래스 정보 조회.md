@@ -25,7 +25,7 @@ public class App {
 
 
 
-**Class 인스턴스를 활용하여 사용자 정의 클래스의 필드들을 접근해보자**
+**리플렉션 API로 Class가 가지고 있는 정보에 접근해보자.**
 
 ~~~java
 //사용자 정의 클래스
@@ -129,4 +129,87 @@ public static void main( String[] args ) throws ClassNotFoundException {
   });
 }
 ~~~
+
+<img src="https://user-images.githubusercontent.com/40616436/77341370-f6f1df80-6d71-11ea-880e-b714732142d6.png" alt="image" style="zoom:50%;" />
+
+- setAccessible(true) : 리플렉션을 활용하여 모든 접근제한자에 접근할 수 있다.
+
+
+
+5. 메소드들을 가져오자(**object 상속 받은 것 까지**)
+
+~~~java
+public static void main( String[] args ) throws ClassNotFoundException {
+  Class<Book> bookClass = Book.class;
+
+  Arrays.stream(bookClass.getMethods()).forEach(System.out::println);
+}
+~~~
+
+<img src="https://user-images.githubusercontent.com/40616436/77342521-a7acae80-6d73-11ea-8f7b-3d57d974fa16.png" alt="image" style="zoom:50%;" />
+
+6. 생성자를 가져오자
+
+~~~java
+public static void main( String[] args ) throws ClassNotFoundException {
+  Class<Book> bookClass = Book.class;
+
+  Arrays.stream(bookClass.getDeclaredConstructors()).forEach(System.out::println);
+}
+~~~
+
+<img src="/Users/mesung/Library/Application Support/typora-user-images/image-20200324020508582.png" alt="image-20200324020508582" style="zoom:50%;" />
+
+7. 부모 클래스를 가져오자
+
+~~~java
+public static void main( String[] args ) throws ClassNotFoundException {
+  Class<? super MyBook> superclass = MyBook.class.getSuperclass();
+  System.out.println(superclass);
+}
+~~~
+
+<img src="https://user-images.githubusercontent.com/40616436/77342885-36213000-6d74-11ea-9011-2a3539e77498.png" alt="image" style="zoom:50%;" />
+
+8. 확장한 인터페이스를 가져오자
+
+~~~java
+public static void main( String[] args ) throws ClassNotFoundException {
+  Arrays.stream(MyBook.class.getInterfaces()).forEach(System.out::println);
+}
+~~~
+
+<img src="https://user-images.githubusercontent.com/40616436/77343039-6ff23680-6d74-11ea-9c9d-f22854d7b039.png" alt="image" style="zoom:50%;" />
+
+9. getModifier를 사용하여 접근제한자나 static 여부를 확인해보자.
+
+~~~java
+public static void main( String[] args ) throws ClassNotFoundException {
+  Arrays.stream(Book.class.getDeclaredFields()).forEach(f -> {
+    int modifiers = f.getModifiers();
+    System.out.println(f);
+    System.out.println(Modifier.isPrivate(modifiers));
+    System.out.println(Modifier.isProtected(modifiers));
+    System.out.println(Modifier.isStatic(modifiers));
+
+  });
+}
+~~~
+
+<img src="https://user-images.githubusercontent.com/40616436/77343360-e5f69d80-6d74-11ea-858e-64d2443d6a62.png" alt="image" style="zoom:50%;" />
+
+10. 메소드의 여러 정보를 확인하자
+
+~~~java
+public static void main( String[] args ) throws ClassNotFoundException {
+  Arrays.stream(Book.class.getMethods()).forEach(m -> {
+    int modifiers = m.getModifiers();
+		
+    m.get...
+    
+  });
+}
+~~~
+
+<img src="https://user-images.githubusercontent.com/40616436/77343773-9795ce80-6d75-11ea-8dff-05f684c7ecc5.png" alt="image" style="zoom:50%;" />
 
