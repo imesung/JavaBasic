@@ -94,9 +94,16 @@ public class Book {
 - Class 인스턴스에서 생성한 클래스의 메소드들을 사용해보자
 
   ~~~java
+  //private 메소드
   Method c = Book.class.getDeclaredMethod("c");
-  c.setAccessible(true);
-  c.invoke(book);	//?
+  c.setAccessible(true);	//C라는 메소드는 private 접근 제한자이기 때문에 setAccessible 설정한다.
+  c.invoke(book);	//해당 매소드의 인스턴스를 파라미터로 넣어줘야 한다.
+  
+  //public 메소드
+  Method c = Book.class.getDeclaredMethod("sum", int.class, int.class);
+  int invoke = (int)c.invoke(book, 1, 2);
+  System.out.println(invoke);
   ~~~
 
-  
+  - **getDeclaredMethod에 파라미터가 있을 때, primitive 타입과 reference 타입을 구분한다.**
+    - 즉, int와 Integer를 구분하는 것이다.

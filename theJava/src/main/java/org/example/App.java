@@ -15,8 +15,8 @@ public class App {
         Book book = (Book) constructor.newInstance("parameter");
         System.out.println(book);
 
-        Method c = Book.class.getDeclaredMethod("c");
-        c.setAccessible(true);
-        c.invoke(book);
+        Method c = Book.class.getDeclaredMethod("sum", int.class, int.class);
+        int invoke = (int)c.invoke(book, 1, 2);
+        System.out.println(invoke);
     }
 }
