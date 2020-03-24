@@ -73,6 +73,7 @@ public class Book {
   ***결과***
 
   <img src="https://user-images.githubusercontent.com/40616436/77429554-30335980-6e1d-11ea-85c5-e9c77049a322.png" alt="image" style="zoom:50%;" />
+
   - A의 필드값은 static하기 때문에 인스턴스가 생성되지 않아도 가져올 수가 있어, a.get(null) 및 a.set(null, "") 처럼 인스턴스 자리에 null이 들어간다.
 
   - 만약 static 필드가 아니라면,

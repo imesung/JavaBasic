@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3773533f-885b-4559-ba20-36959e43ffbb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/di-example/src/main/java/com/mesung/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/di-example/src/main/java/com/mesung/di/ContainerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/di-example/src/main/java/com/mesung/di/Inject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/di-example/src/test/java/com/mesung/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/di-example/src/test/java/com/mesung/di/BookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/di-example/src/test/java/com/mesung/di/BookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/di-example/src/test/java/com/mesung/di/ContainerServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theJava/src/main/java/org/example/di/ContainerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theJava/src/main/java/org/example/di/Inject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theJava/src/test/java/org/example/di/BookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theJava/src/test/java/org/example/di/BookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theJava/src/test/java/org/example/di/ContainerServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theJava/target/classes/org/example/AnotherAnnotation.class" beforeDir="false" afterPath="$PROJECT_DIR$/theJava/target/classes/org/example/AnotherAnnotation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theJava/target/classes/org/example/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/theJava/target/classes/org/example/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theJava/target/classes/org/example/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/theJava/target/classes/org/example/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theJava/target/classes/org/example/MyAnnotation.class" beforeDir="false" afterPath="$PROJECT_DIR$/theJava/target/classes/org/example/MyAnnotation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theJava/target/classes/org/example/MyBook.class" beforeDir="false" afterPath="$PROJECT_DIR$/theJava/target/classes/org/example/MyBook.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theJava/target/classes/org/example/MyInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/theJava/target/classes/org/example/MyInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theJava/target/test-classes/org/example/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/theJava/target/test-classes/org/example/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/정리/TheJava_리플렉션 API(2)_클래스 정보 수정.md" beforeDir="false" afterPath="$PROJECT_DIR$/정리/TheJava_리플렉션 API(2)_클래스 정보 수정.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ZaA8079xp7NEkr1Dp9GNtm1mJK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/di-example/src/test/java/com/mesung" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/di-example/src/test/java/com/mesung" />
+      <recent name="$PROJECT_DIR$/di-example/src/main/java/com/mesung/di" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3773533f-885b-4559-ba20-36959e43ffbb" name="Default Changelist" comment="" />
+      <created>1585066667434</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585066667434</updated>
+    </task>
+    <servers />
+  </component>
+</project>
