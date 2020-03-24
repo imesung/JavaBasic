@@ -1,7 +1,7 @@
 package org.example;
 
 import java.lang.annotation.Annotation;
-import java.lang.reflect.Modifier;
+import java.lang.reflect.*;
 import java.util.Arrays;
 
 /**
@@ -9,15 +9,14 @@ import java.util.Arrays;
  *
  */
 public class App {
-    public static void main( String[] args ) throws ClassNotFoundException {
-        Arrays.stream(Book.class.getDeclaredFields()).forEach(f -> {
-            Arrays.stream(f.getAnnotations()).forEach(a -> {
-                if(a instanceof AnotherAnnotation) {
-                    AnotherAnnotation anotherAnnotation = (AnotherAnnotation) a;
-                    System.out.println(anotherAnnotation.value());
-                    System.out.println(anotherAnnotation.number());
-                }
-            });
-        });
+    public static void main( String[] args ) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException, NoSuchFieldException {
+        Class<?> bookClass = Class.forName("org.example.Book");
+        Constructor<?> constructor = bookClass.getConstructor(String.class);
+        Book book = (Book) constructor.newInstance("parameter");
+        System.out.println(book);
+
+        Method c = Book.class.getDeclaredMethod("c");
+        c.setAccessible(true);
+        c.invoke(book);
     }
 }

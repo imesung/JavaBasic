@@ -1,6 +1,7 @@
 package com.interview.finalStudy;
 
 public class FinalTest {
+    public int test = 10;
     private final int value;
     private static final String PR_STATIC = "private static";
     public static final String PU_STATIC = "public static";
@@ -24,5 +25,9 @@ class FinalMain {
         System.out.println(f1.getValue());
         System.out.println(f2.getValue());
         System.out.println(f3.getValue());
+
+
+        String num = "-";
+        System.out.println(Integer.parseInt(num));
     }
 }

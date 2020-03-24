@@ -1,38 +1,18 @@
 package org.example;
 
-@MyAnnotation("haong")
 public class Book {
-    private static String B = "BOOK";
+    public static String A = "A";
+    private String B = "B";
 
-    private static final String C = "BOOK";
-
-    @AnotherAnnotation(value = "hello", number = 20)
-    private String a = "a";
-
-    public String d = "d";
-
-    @AnotherAnnotation(value = "hi", number = 60)
-    protected String e = "e";
-
-    public Book() {
+    public Book(){}
+    public Book(String b) {
+        B = b;
     }
 
-    @AnotherAnnotation
-    public Book(String a, String d, String e) {
-        this.a = a;
-        this.d = d;
-        this.e = e;
+    private void c() {
+        System.out.println("C");
     }
-
-    private void f() {
-        System.out.println("F");
-    }
-
-    public void g() {
-        System.out.println("g");
-    }
-
-    public int h () {
-        return 100;
+    public int sum(int left, int right) {
+        return left + right;
     }
 }
