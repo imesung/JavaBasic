@@ -134,6 +134,78 @@ public class ContainerService {
 
 
 
+**해당 애노테이션을 jar로 만들자**
+
+- maven install을 통해서 해당 애노테이션을 만든 프로젝트를 jar파일로 만들자
+
+<img src="https://user-images.githubusercontent.com/40616436/77813172-c8656300-70e9-11ea-8b4f-18ccf444a2e8.png" alt="image" style="zoom:50%;" />
+
+- 위 명령어를 통해 jar파일이 만들어졌다.
+
+<img src="https://user-images.githubusercontent.com/40616436/77813238-80930b80-70ea-11ea-9d9b-8ad206a2782f.png" alt="image" style="zoom:50%;" />
+
+
+
+**만든 jar파일을 다른 프로젝트에서 활용하여 DI를 사용하자**
+
+- 다른 프로젝트에서 우리가 만든 jar 파일을 사용하기 위해선 dependency에 해당 프로젝트의 groupId와 version을 삽입해야한다.
+
+~~~xml
+<!-- 우리가 만든 DI 프로젝트 -->
+<groupId>com.mesung</groupId>
+<artifactId>di-example</artifactId>
+<version>1.0-SNAPSHOT</version>
+~~~
+
+~~~xml
+<!-- DI 사용하는 프로젝트 pom.xml-->
+<dependencies>
+  ...
+
+  <dependency>
+    <groupId>com.mesung</groupId>
+    <artifactId>di-example</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </dependency>
+</dependencies>
+~~~
+
+
+
+- DI를 사용하려는 프로젝트에서 직접적으로 애노테이션 사용
+
+~~~java
+public class AccountService {
+
+  //우리가 만든 @Inject라는 애노테이션
+  @Inject
+  AccountRepository accountRepository;
+
+  public void join() {
+    System.out.println("Service.join");
+    accountRepository.save();
+  }
+}
+
+public class AccountRepository {
+    public void save() {
+        System.out.println("Repo.save");
+    }
+}
+~~~
+
+​	*우리가 만든 @Inject를 사용하면 자동으로 의존을 주입받을 수 있다.*
+
+
+
+- 실행 결과를 살펴보자
+
+  <img src="https://user-images.githubusercontent.com/40616436/77813520-9c97ac80-70ec-11ea-962c-0cbf4132f8c7.png" alt="image" style="zoom:50%;" />
+
+  *AccountRepository를 주입받아서 정상적으로 AccountRepository에 있는 "Repo.save"를 출력하는 것을 볼 수 있다.*
+
+
+
 **정리**
 
 *리플렉션 사용시 주의할 것*
