@@ -81,4 +81,4 @@
 - 만약, Proxy.newPorxyInstance()의 파라미터 중 Class [] {BookService.class}이 Class [] {DefaultBookService.class}이라면 **즉, 클래스 배열이 인터페이스가 아니라 클래스 기반이라면 다이나믹 프록시를 만들 수 없다.**
 - 그럼 인터페이스(서브젝트)가 없다면?
   - 이런 경우에는 자바에서 다이나믹 프록시를 사용하지 못한다.
-  - **라이브러리를 사용해서 만들면 된다.(CGlib, ByteBuddy)**
+  - **라이브러리를 사용해서 만들면 된다.(CGlib)**
