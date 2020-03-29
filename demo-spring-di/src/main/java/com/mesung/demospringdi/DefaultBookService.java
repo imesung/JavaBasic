@@ -6,4 +6,9 @@ public class DefaultBookService implements BookService{
         System.out.println("rent : " + book.getTitle());
     }
 
+    @Override
+    public void returnBook(Book book) {
+        System.out.println("return: " + book.getTitle());
+    }
+
 }
