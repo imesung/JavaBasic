@@ -16,7 +16,7 @@ public class Main {
         List<Object> obj = new ArrayList<Object>();
         HashSet<String> hs = new HashSet<String>();
         hs.contains("ss");
-        hs.iterator()
+
     }
 
 }
