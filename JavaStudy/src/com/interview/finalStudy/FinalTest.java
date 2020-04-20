@@ -28,6 +28,5 @@ class FinalMain {
 
 
         String num = "-";
-        System.out.println(Integer.parseInt(num));
     }
 }
