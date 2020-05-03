@@ -99,5 +99,5 @@ public Circle copy() throws CloneNotSupportedException {
 **정리**
 
 - Shape이라는 클래스가 Cloneable의 clone() 함수를 가지고 있는 인터페이스 역할을 하게 되고, Circle이 shape의 clone()을 할당받아 copy()를 진행할 수 있는 것이다.
-- 결과적으로, 복사할 수 있는 Cloneable의 clone()을 받아 해당 clone()를 사용하여 copy 기능을 가진 메소드를 만들어 원하는 작업을 진행하는 것이다.
+- 즉, copy를 하는 기능은 생산비용이 높으므로 Cloneable의 clone()을 활용하여 인스턴스를 쉽게 복사할 수 있는 것이다.
 - 프로토타입 패턴의 경우 java에서 지원하지 않으면 어려운 부분이 없지 않아 있다.

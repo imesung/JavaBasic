@@ -1,17 +1,22 @@
 package com.pattern.ch06_prototype;
 
-public class Circle extends Shape{
+public class Circle implements Shape{
     private int x,y,r;
 
-    public Circle(int x, int y, int r) {
+    public Circle(int x, int y, int r) throws CloneNotSupportedException {
         super();
         this.x = x;
         this.y = y;
         this.r = r;
     }
 
-    public Circle copy() throws CloneNotSupportedException {
-        Circle circle = (Circle) clone();
+    public Circle copy() {
+        Circle circle = null;
+        try {
+            circle = (Circle) clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
         circle.x = x+1;
         circle.y = y+1;
         return circle;
