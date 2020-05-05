@@ -10,6 +10,7 @@ public abstract class CustService {
 
         //고객 주문 가능 상태 체크
         boolean custSt = checkCustomerStatus(customer);
+        result.put("custStCd", String.valueOf(custSt));
 
         return result;
     }

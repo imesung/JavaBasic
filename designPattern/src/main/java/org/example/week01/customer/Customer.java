@@ -1,11 +1,11 @@
 package org.example.week01.customer;
 
 public class Customer {
-    private String userId;		//ID
-    private String userName;		//name
-    private int gubun;			//0: 임직원, 1: 일반고객
-    private long point;			// 보유포인트
-    private boolean blackConsumerFlg;	//
+    private final String userId;		//ID
+    private final String userName;		//name
+    private final int gubun;			//0: 임직원, 1: 일반고객
+    private final long point;			// 보유포인트
+    private final boolean blackConsumerFlg;	//
 
     public Customer(String userId, String userName, int gubun, long point, boolean blackConsumerFlg) {
         this.userId = userId;
@@ -15,4 +15,23 @@ public class Customer {
         this.blackConsumerFlg = blackConsumerFlg;
     }
 
+    public String getUserId() {
+        return userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public int getGubun() {
+        return gubun;
+    }
+
+    public long getPoint() {
+        return point;
+    }
+
+    public boolean isBlackConsumerFlg() {
+        return blackConsumerFlg;
+    }
 }
