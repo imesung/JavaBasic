@@ -1,0 +1,16 @@
+
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ì·¤ñùÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(İÔÚ
+J
+java:S1128"4Remove this unused import 'java.lang.reflect.Field'.(„‡Áú
+M	java:S106"9Replace this use of System.out or System.err by a logger.(Š†ô
+}
+java:S1130
+"gRemove the declaration of thrown exception 'java.lang.ClassCastException' which is a runtime exception.(²³–À
+H
+java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ
+
+java:S1130
+"wRemove the declaration of thrown exception 'java.lang.NoSuchFieldException', as it cannot be thrown from method's body.(²³–À
+N	java:S106"9Replace this use of System.out or System.err by a logger.(İÔÚ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(áõ”Àúÿÿÿÿ

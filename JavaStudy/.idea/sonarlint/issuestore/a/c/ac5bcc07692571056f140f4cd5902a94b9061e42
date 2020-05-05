@@ -1,0 +1,11 @@
+
+ž
+java:S1130"‚Remove the declaration of thrown exception 'java.lang.CloneNotSupportedException', as it cannot be thrown from constructor's body.(ö¿°æýÿÿÿÿ
+5
+java:S1659"Declare "y" on a separate line.(ŸÎ„¦
+>
+java:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+_
+java:S2259"DA "NullPointerException" could be thrown; "circle" is nullable here.(Çìû»ýÿÿÿÿ
+5
+java:S1659"Declare "r" on a separate line.(ŸÎ„¦

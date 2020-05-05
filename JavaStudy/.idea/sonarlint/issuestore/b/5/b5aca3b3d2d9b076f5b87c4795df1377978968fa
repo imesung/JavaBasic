@@ -1,0 +1,14 @@
+
+b
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(’Ÿêè8ûúçÏ.
+£
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ä‡˜Íüÿÿÿÿ8Ò‰ïÏ.
+£
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ä‡˜Íüÿÿÿÿ8§ñÏ.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(»ÌÎúùÿÿÿÿ8ûúçÏ.
+Q
+java:S1610"5Convert the abstract class "Shape" into an interface.(˜”8ûúçÏ.
+\
+java:S1161":Add the "@Override" annotation above this method signature(Ä‡˜Íüÿÿÿÿ8§ñÏ.
+
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¡éÀ‚8¾ÇğÏ.

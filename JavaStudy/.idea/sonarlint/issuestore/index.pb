@@ -1,0 +1,23 @@
+
+d
+4src/com/pattern/ch04_factory/concrete/HpCreator.java,3/a/3a5436f0403c5e394fea8a0f0450d7be1cbe6d59
+Y
+)src/com/pattern/ch06_prototype/Shape.java,5/3/53badab107ac0ec2e322f8f9b9fd3b0ae826fab6
+`
+0src/com/pattern/ch04_factory/framework/Item.java,2/2/222d27b2460d7954fcea2a534677ebad278af91e
+a
+1src/com/pattern/ch05_singleton/SingletonMain.java,0/9/09a16de978f319913e7b5ff47e22ad4cea8bcd4d
+c
+3src/com/pattern/ch04_factory/concrete/HpPotion.java,4/1/410054a07e8f075a34af3ed3e099aca808efd661
+a
+1src/com/pattern/ch05_singleton/SystemSpeaker.java,5/5/55a3486add4d1357a88bb84672eb9668903d255a
+e
+5src/com/pattern/ch05_singleton/EnumSystemSpeaker.java,4/2/4205f42cabfdbd89142716064c39ce397192fcc9
+c
+3src/com/pattern/ch04_factory/concrete/MpPotion.java,a/3/a371e38b65cc165fc5e92c05a69776e10824d640
+a
+1src/com/pattern/ch06_prototype/PrototypeMain.java,9/d/9dcace99cd7c0fba53e9145ea4b41874483c76c5
+Z
+*src/com/pattern/ch06_prototype/Circle.java,a/c/ac5bcc07692571056f140f4cd5902a94b9061e42
+P
+ src/com/interview/oop/Shape.java,b/5/b5aca3b3d2d9b076f5b87c4795df1377978968fa
