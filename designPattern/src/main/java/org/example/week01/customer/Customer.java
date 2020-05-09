@@ -15,23 +15,42 @@ public class Customer {
         this.blackConsumerFlg = blackConsumerFlg;
     }
 
-    public String getUserId() {
-        return userId;
+    //고객 주문 가능 여부 확인
+    public boolean chkCustStatus() {
+        if(this.gubun == 0) {
+            if(this.point == 0) {
+                return false;
+            }
+        } else if(this.gubun == 1) {
+            if(this.blackConsumerFlg) {
+                return false;
+            }
+        } else if(blackConsumerFlg) {
+            return false;
+        }
+        return true;
     }
 
-    public String getUserName() {
-        return userName;
+    public boolean chkCustGubun(String giftStCd) {
+        if(giftStCd.equals("false") && this.gubun == 1) {
+            System.out.println("일반 고객으로 인해 사은품 재고 없어 주문 불가");
+            return false;
+        } else if(giftStCd.equals("true") && this.gubun == 0) {
+            System.out.println("임직원 고객으로 인해 사은품 재고 있어 주문 불가");
+            return false;
+        }
+        return true;
     }
 
-    public int getGubun() {
-        return gubun;
+    public boolean chkPoint() {
+        if(this.point < 3000) {
+            System.out.println("포인트 부족");
+            return false;
+        }
+        return true;
     }
 
-    public long getPoint() {
-        return point;
-    }
-
-    public boolean isBlackConsumerFlg() {
-        return blackConsumerFlg;
+    public long usePoint(long prdPrc) {
+        return prdPrc - this.point;
     }
 }

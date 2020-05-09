@@ -21,3 +21,13 @@ Z
 *src/com/pattern/ch06_prototype/Circle.java,a/c/ac5bcc07692571056f140f4cd5902a94b9061e42
 P
  src/com/interview/oop/Shape.java,b/5/b5aca3b3d2d9b076f5b87c4795df1377978968fa
+H
+src/com/oop/CarSpec.java,5/1/5181c26eb141f2bbc2269921f2df2f26e0f809c0
+L
+src/com/oop/VehicleSpec.java,7/d/7dc27fd6137012bffa71fdd613de38c950bee436
+I
+src/com/oop/AirPlane.java,d/2/d2d5d1a4ffb0b25c6f46d142d635431452726f71
+D
+src/com/oop/Car.java,5/5/55283cba4ebf63b7089803977e1d1bff3addee95
+H
+src/com/oop/Vehicle.java,a/d/ad478519a1342230286be7059cdba37121a353e8

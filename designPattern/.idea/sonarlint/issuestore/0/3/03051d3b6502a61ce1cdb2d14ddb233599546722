@@ -1,0 +1,8 @@
+
+G
+java:S1068"*Remove this unused "userId" private field.(‡ÿç”8÷Ø”ö.
+Z	java:S106'"9Replace this use of System.out or System.err by a logger.(‘š÷‹úÿÿÿÿ8÷Ø”ö.
+Z	java:S106$"9Replace this use of System.out or System.err by a logger.(¨†™Üûÿÿÿÿ8÷Ø”ö.
+I
+java:S1068",Remove this unused "userName" private field.(öû–ã8÷Ø”ö.
+Z	java:S106/"9Replace this use of System.out or System.err by a logger.(‘ªÓøÿÿÿÿ8÷Ø”ö.

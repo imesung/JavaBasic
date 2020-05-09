@@ -4,19 +4,21 @@ import org.example.week01.customer.Customer;
 import org.example.week01.product.Product;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public abstract class PaymentService {
     protected abstract String mtdOfPayment();
-    protected abstract boolean pay(long point, long prc);
+    protected abstract boolean pay(Customer customer, Product product);
 
-    public HashMap<String, String> requestPayment(Customer customer, Product product) {
-        HashMap<String, String> result = new HashMap<>();
+    public Map<String, String> requestPayment(Customer customer, Product product) {
+        Map<String, String> result = new HashMap<>();
 
-        String chkMtdOfPayment = mtdOfPayment();
-        boolean payFlg = pay(customer.getPoint(), product.getPrdPrc());
+        boolean payFlg = pay(customer, product);
 
         result.put("payFlg", String.valueOf(payFlg));
 
         return result;
     }
 }
+
+

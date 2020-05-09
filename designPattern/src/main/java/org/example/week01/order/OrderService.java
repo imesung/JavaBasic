@@ -4,13 +4,18 @@ import org.example.week01.customer.Customer;
 import org.example.week01.product.Product;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public abstract class OrderService {
-    protected abstract HashMap<String, String> orderSheetRequest(Customer customer, Product product);
+    protected abstract Map<String, String> orderSheetRequest(Customer customer, Product product);
     protected abstract boolean checkLoginStatus();
 
-    public void createOrder(Customer customer, Product product) {
+    public boolean createOrder(Customer customer, Product product) {
 
-        HashMap<String, String> orderStatusResult = orderSheetRequest(customer, product);
+        Map<String, String> orderStatusResult = orderSheetRequest(customer, product);
+        if(orderStatusResult.get("Status").equals("E")) {
+            return true;
+        }
+        return false;
     }
 }

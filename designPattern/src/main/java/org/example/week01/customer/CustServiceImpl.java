@@ -5,17 +5,10 @@ public class CustServiceImpl extends CustService {
     //고객 상태 체크
     @Override
     protected boolean checkCustomerStatus(Customer customer) {
-        int gubun = customer.getGubun();
-
-        if(gubun == 0) {
-            if(customer.getPoint() == 0) {
-                return false;
-            }
-        } else if(gubun == 1) {
-            if(customer.isBlackConsumerFlg()) {
-                return false;
-            }
+        boolean isCustStatus = customer.chkCustStatus();
+        if(!isCustStatus) {
+            System.out.println("해당 고객 주문 불가 상태");
         }
-        return true;
+        return isCustStatus;
     }
 }
