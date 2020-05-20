@@ -1,10 +1,5 @@
 
-c
-java:S1192!"FDefine a constant instead of duplicating this literal "false" 3 times.(û•­ã8·½û.
-c
-java:S1126J"AReplace this if-then-else statement by a single return statement.(ÄÂûşùÿÿÿÿ8›Ä…û.
-c
-java:S1126C"AReplace this if-then-else statement by a single return statement.( ˜ö¶şÿÿÿÿ8·½û.
-Z	java:S1062"9Replace this use of System.out or System.err by a logger.(Å­Ëİúÿÿÿÿ8·½û.
-c
-java:S1126;"AReplace this if-then-else statement by a single return statement.(±¸³îúÿÿÿÿ8êÄˆû.
+]
+java:S11261"AReplace this if-then-else statement by a single return statement.(à×şp8’ó”£.
+^
+java:S1126%"AReplace this if-then-else statement by a single return statement.(‚±İ»8ş×‚•£.

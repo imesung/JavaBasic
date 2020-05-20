@@ -1,12 +1,12 @@
 
-Z	java:S106-"9Replace this use of System.out or System.err by a logger.(ÿêÙŞûÿÿÿÿ8˜²¹ö.
-c
-java:S1126"AReplace this if-then-else statement by a single return statement.(ù»©Èùÿÿÿÿ8˜²¹ö.
-U	java:S106("9Replace this use of System.out or System.err by a logger.(—×”Á8èÇâ÷.
-Z	java:S106*"9Replace this use of System.out or System.err by a logger.(»îç‹üÿÿÿÿ8·¦Ù÷.
+]
+java:S1126&"AReplace this if-then-else statement by a single return statement.(µÄÎ^8’É•£.
 F
 java:S1068")Remove this unused "prdCd" private field.(ëŠ®8Ğˆóö.
 ^
 java:S1126"AReplace this if-then-else statement by a single return statement.(—îÜ8˜²¹ö.
-U	java:S106/"9Replace this use of System.out or System.err by a logger.(Œ¤½³8êÑá÷.
 X	java:S125"<This block of commented-out lines of code should be removed.(™€æÉ8Ğˆóö.
+c
+java:S1126"AReplace this if-then-else statement by a single return statement.(ù»©Èùÿÿÿÿ8˜²¹ö.
+]
+java:S1128"ARemove this unused import 'org.example.week01.customer.Customer'.(Ê”Ë#8ï·É•£.

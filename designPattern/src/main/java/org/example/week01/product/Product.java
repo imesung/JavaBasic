@@ -33,18 +33,11 @@ public class Product {
         return false;
     }
 
-    public boolean payPrd(Customer customer) {
-
-        //고객이 포인트 3000원 이상 가지고 있음
-        if(customer.chkPoint()) {
-            System.out.println("포인트를 사용하였습니다.");
-            if(this.prdPrc > 3000) {
-                System.out.println("결제 금액 : " + customer.usePoint(this.prdPrc));
-            }
-        } else {
-            System.out.println("결제 금액 : " + this.prdPrc);
+    //포인트 사용을 위해 상품 금액이 3000원 넘나 확인.
+    public boolean chkPrdPrc() {
+        if(this.prdPrc > 3000) {
+            return true;
         }
-        System.out.println("결제 완료되었습니다.");
-        return true;
+        return false;
     }
 }

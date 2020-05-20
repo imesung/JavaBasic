@@ -8,7 +8,6 @@ import java.util.Map;
 
 public abstract class OrderService {
     protected abstract Map<String, String> orderSheetRequest(Customer customer, Product product);
-    protected abstract boolean checkLoginStatus();
 
     public boolean createOrder(Customer customer, Product product) {
 

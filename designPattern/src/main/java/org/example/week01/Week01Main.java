@@ -1,12 +1,17 @@
 package org.example.week01;
 
+import org.apache.log4j.Logger;
 import org.example.week01.customer.Customer;
+import org.example.week01.login.Login;
 import org.example.week01.order.OrderService;
 import org.example.week01.order.OrderServiceImpl;
 import org.example.week01.product.Product;
 
 public class Week01Main {
+    private static final Logger logger = Logger.getLogger(Week01Main.class);
+
     public static void main(String[] args) {
+
         //Customer customer = new Customer("dynee313", "dy", 0, 0, false);    	  //도연 임직원
         //Customer customer = new Customer("imesung", "hs", 0, 10000, false);     //혜성 임직원
         //Customer customer = new Customer("mike6321", "jw", 1, 2000, false);     //준우 일반고객
@@ -16,6 +21,11 @@ public class Week01Main {
         Product product2 = new Product(222222, 10000, 0, 40);
         Product product3 = new Product(222222, 10000, 0, 0);
 
+        //1. 로그인 시도 및 여부 확인하기(싱글톤 활용)
+        Login login = Login.getInstance();
+        login.loginYn(customer);
+
+        //2. 고객 주문 진행
         OrderService orderService = new OrderServiceImpl();
         orderService.createOrder(customer, product1);
         System.out.println("========================");
