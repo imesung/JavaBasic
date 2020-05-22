@@ -7,6 +7,11 @@ import java.util.List;
 public class Main {
 
     public static void main(String [] args) {
+        Integer a = 129;
+        Integer b = 129;
+        System.out.println(a == b);
+        System.out.println(a.hashCode() == b.hashCode());
+
         SuperClass.a = 1;
         SubClass.a = 2;
         System.out.println(SuperClass.a +"," + SubClass.a);
