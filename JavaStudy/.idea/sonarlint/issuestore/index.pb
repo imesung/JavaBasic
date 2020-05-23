@@ -115,3 +115,5 @@ Y
 )src/com/pattern/ch09_bridge/SoundMCF.java,a/8/a88ce94182cf8371c1ed2efab767f606e1e5506c
 [
 +src/com/pattern/ch09_bridge/BridgeMain.java,f/f/ff4f553c938294e06152ee621bc55fcbf0c28c02
+N
+src/com/advancedJava/Main.java,1/3/139853e5e049ab513012c7b4e2a253237e4a9700

@@ -66,6 +66,8 @@ private static class IntegerCache {
 }
 ~~~
 
+https://feco.tistory.com/112
+
 
 
 브릿지 패턴, 어댑터 패턴, 전략 패턴

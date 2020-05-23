@@ -1,8 +1,8 @@
 
 U	java:S106!"9Replace this use of System.out or System.err by a logger.(™²“õ8ğãú.
+G
+java:S1068"*Remove this unused "logger" private field.(Ô¸8Õ•Ü“£.
 v
 java:S1192"YDefine a constant instead of duplicating this literal "========================" 3 times.(™²“õ8ğãú.
 U	java:S106#"9Replace this use of System.out or System.err by a logger.(™²“õ8ğãú.
-G
-java:S1068"*Remove this unused "logger" private field.(Ô¸8Õ•Ü“£.
 U	java:S106"9Replace this use of System.out or System.err by a logger.(™²“õ8ğãú.
