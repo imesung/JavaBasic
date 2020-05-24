@@ -117,3 +117,11 @@ Y
 +src/com/pattern/ch09_bridge/BridgeMain.java,f/f/ff4f553c938294e06152ee621bc55fcbf0c28c02
 N
 src/com/advancedJava/Main.java,1/3/139853e5e049ab513012c7b4e2a253237e4a9700
+a
+1src/com/pattern/ch10_composite/CompositeMain.java,5/e/5ed6f8fd9bbb71b1522d63145aa0dc0aa3d3fb17
+]
+-src/com/pattern/ch10_composite/Component.java,f/a/fa6767d7e3922b625cf266383b3a6f10d53f7846
+X
+(src/com/pattern/ch10_composite/File.java,b/e/be9b8d2520618e647af5319b57c6fd342bdd89d1
+Z
+*src/com/pattern/ch10_composite/Folder.java,3/8/3823406337d422d69bedeb50229f7c4a624f6b81
