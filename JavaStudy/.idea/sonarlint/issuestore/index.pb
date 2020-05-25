@@ -147,3 +147,13 @@ Y
 +src/com/pattern/ch12_visitor/Visitable.java,f/e/fe81b567fd580b1fdb8421ad3ae057528457d0d7
 Z
 *src/com/pattern/ch12_visitor/VisitorA.java,a/c/acdfe3bbe5268c61dd7f5125925e985a994efc89
+i
+9src/com/pattern/ch08_abstractFactory_prst/DoorStatus.java,9/a/9ae26beb78d6fb0a3a4fd13d8bbeba82f2938368
+e
+5src/com/pattern/ch08_abstractFactory_prst/LGDoor.java,d/2/d2df567c1179bcca5009d21093bf3043b91c0aa7
+j
+:src/com/pattern/ch08_abstractFactory_prst/HyundaiDoor.java,8/6/86f8825b7b76e3bc0bc7fd423188a083494a2f37
+g
+7src/com/pattern/ch08_abstractFactory_prst/VendorID.java,0/9/09d563ee959df3efa343c550bfca88084b44211e
+c
+3src/com/pattern/ch08_abstractFactory_prst/Door.java,b/9/b93f9da35f08e7c8a1a321445a5d574a7b5923ca
