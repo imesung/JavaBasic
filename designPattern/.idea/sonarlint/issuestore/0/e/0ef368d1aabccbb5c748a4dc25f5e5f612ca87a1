@@ -1,12 +1,12 @@
 
 ]
-java:S1128"ARemove this unused import 'org.example.week01.customer.Customer'.(Ê”Ë#8ï·É•£.
+java:S1126&"AReplace this if-then-else statement by a single return statement.(µÄÎ^8’É•£.
+X	java:S125"<This block of commented-out lines of code should be removed.(™€æÉ8Ğˆóö.
 F
 java:S1068")Remove this unused "prdCd" private field.(ëŠ®8Ğˆóö.
-]
-java:S1126&"AReplace this if-then-else statement by a single return statement.(µÄÎ^8’É•£.
-^
-java:S1126"AReplace this if-then-else statement by a single return statement.(—îÜ8˜²¹ö.
-X	java:S125"<This block of commented-out lines of code should be removed.(™€æÉ8Ğˆóö.
 c
 java:S1126"AReplace this if-then-else statement by a single return statement.(ù»©Èùÿÿÿÿ8˜²¹ö.
+^
+java:S1126"AReplace this if-then-else statement by a single return statement.(—îÜ8˜²¹ö.
+]
+java:S1128"ARemove this unused import 'org.example.week01.customer.Customer'.(Ê”Ë#8ï·É•£.

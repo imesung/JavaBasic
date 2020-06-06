@@ -1,0 +1,9 @@
+
+õ
+java:S1598"ÙThis file "Product.java" should be located in "com/github/bakerybluprint/croissant/week_03/hs/homework/product" directory, not in "/Users/mesung/Study/JavaBasic/designPattern/src/main/java/org/example/week03/product".(Ã´ÆÍûÿÿÿÿ
+|
+java:S1128"fRemove this unused import 'com.github.bakerybluprint.croissant.week_03.hs.homework.customer.Customer'.(¾©¼ù
+?
+java:S1068
+")Remove this unused "prdCd" private field.(ëŠ®
+Q	java:S125"<This block of commented-out lines of code should be removed.(™€æÉ

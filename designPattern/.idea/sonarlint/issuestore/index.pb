@@ -19,3 +19,5 @@ a
 1src/main/java/org/example/week01/login/Login.java,4/a/4a1925a3e6b441ee95f5d50bd67bf08992d032cd
 e
 5src/main/java/org/example/week01/payment/Payment.java,6/4/64badf632a70fe9e1ac59945c8df901927b3a2f8
+e
+5src/main/java/org/example/week03/product/Product.java,7/0/70d12dafed6383f0a4d30663f99e4abe50972350
