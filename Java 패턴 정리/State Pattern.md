@@ -14,26 +14,24 @@
 ## Light(Context)
 
 ~~~java
+//Context
 public class Light{
 
     private LightState lightState;
-    private LightState offState = new OffState();
-    private LightState onState = new OnState();
 
 
     /**
      * @info 처음 상태는 꺼진 상태
      */
-    public Light() {
-        this.lightState = offState;
+    public Light(LightState lightState) {
+        this.lightState = lightState;
     }
 
     /**
      * @info 해당 행동을 통해 상태도 변경(on)
      */
     public void on() {
-        this.lightState.on();
-        this.lightState = onState;
+        this.lightState = this.lightState.on(this.lightState);
     }
 
 
@@ -41,11 +39,9 @@ public class Light{
      * @info 해당 행동을 통해 상태도 변경(off)
      */
     public void off() {
-        this.lightState.off();
-        this.lightState = offState;
+        this.lightState = this.lightState.off(this.lightState);
     }
 }
-
 ~~~
 
 
@@ -53,9 +49,10 @@ public class Light{
 ## LightState(State)
 
 ~~~java
+//State
 public interface LightState {
-    public void on();
-    public void off();
+    public LightState on(LightState lightState);
+    public LightState off(LightState lightState);
 }
 ~~~
 
@@ -66,26 +63,29 @@ public interface LightState {
 ~~~java
 public class OffState implements LightState {
     @Override
-    public void on() {
+    public LightState on(LightState lightState) {
         System.out.println("Light ON");
+        return new OnState();
     }
 
     @Override
-    public void off() {
+    public LightState off(LightState lightState) {
         System.out.println("Light Nothing");
+        return lightState;
     }
 }
 
-
 public class OnState implements LightState {
     @Override
-    public void on() {
+    public LightState on(LightState lightState) {
         System.out.println("Light Nothing");
+        return lightState;
     }
 
     @Override
-    public void off() {
+    public LightState off(LightState lightState) {
         System.out.println("Light Off");
+        return new OffState();
     }
 }
 ~~~
@@ -97,7 +97,7 @@ public class OnState implements LightState {
 ~~~java
 public class Application {
     public static void main(String[] args) {
-        Light light = new Light();
+        Light light = new Light(new OffState());
         light.off();
         light.off();
 
@@ -112,12 +112,21 @@ public class Application {
 
 ---
 
+정리
+
 상태 패턴은 행동을 각 객체에 맞게 위임해주는 것은 전략 패턴과 매우 비슷하다. 
 
 하지만 전략 패턴의 경우 알고리즘을 변경해주는 것이고, 상태 패턴의 경우 이벤트가 발생했을 때 상태에 따라서 다르게 해주고 상태도 변경해준다.
 
 Ex. 전략 패턴의 경우 캐릭터에 따라 검을 휘두르거나 던질 수 있으나 상태 패턴에서는 캐릭터의 검이 캐릭터에 따라 총으로 변경될 수도 있는 것이다.
 
----
 
-왜 쓰는가?
+
+장점 
+
+클라이언트는 Sate 객체에 대해서 자세히 몰라도 되며, Context 객체에 지저분한 조건문을 집어넣는 대신에 사용할 수 있다. Context에서는 미리 정해진 State 전환 규칙을 가지고 자기 State를 변환하기 때문이다.
+
+또한, 각 Context(Light)는 각 State에 대해서(수정) 닫혀 있으며 새로운 상태 클래스 추가에 대해 열려있다.
+
+​	- 각 state가 수정해도 Light는 영향을 받지 않고, 새로운 TailLight라는 것이 추가되도 확장이 용이하다.
+

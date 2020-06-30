@@ -2,11 +2,11 @@
 
 각 User가 Mediator를 통해 메시지를 전달하면 Mediator는 연결되어 있는 User들에게 메시지를 대신 전송해주는 패턴.
 
-Ex. 단톡방
+Ex. 단톡방 혹은 1:다 채팅
 
 ---
 
-<img src="https://user-images.githubusercontent.com/40616436/86123927-46843c00-bb15-11ea-8879-8fda2a222956.png" alt="image" style="zoom:50%;" />
+<img src="https://user-images.githubusercontent.com/40616436/86134706-e8f7eb80-bb24-11ea-891b-b1db6a0dbe18.png" alt="image" style="zoom:50%;" />
 
 ---
 
@@ -147,4 +147,23 @@ public class ChatUser extends User{
 
 ---
 
-왜 쓰는가?
+정리
+
+Mediator 객체를 통해 여러 User들에게 접근이 가능하니 복잡도가 낮아져 유지보수 및 재사용의 확장성이 유리한 패턴이다.
+
+User 객체로만 구성되어 있다면,
+
+~~~java
+user1.sendData(user2);
+user1.sendData(user3);
+user1.sendData(user4);
+
+user2.sendData(user1);
+user2.sendData(user3);
+user2.sendData(user4);
+
+//////////////////////
+user1.sendDate();	//user2, 3, 4 모두 수신 가능
+
+//위 예제와 같이 또 다른 채팅방도 가능
+~~~
