@@ -2,3 +2,122 @@
 
 상태를 객체로 나타내고 객체의 행동에 따라 상태가 변화.
 
+---
+
+<img src="https://user-images.githubusercontent.com/40616436/86128018-c1505580-bb1b-11ea-9c99-af8aba4092c7.png" alt="image" style="zoom:50%;" />
+
+- Context : 인터페이스로 구성된 상태 객체를 가진 객체
+- StateA, StateB : 액션
+
+---
+
+## Light(Context)
+
+~~~java
+public class Light{
+
+    private LightState lightState;
+    private LightState offState = new OffState();
+    private LightState onState = new OnState();
+
+
+    /**
+     * @info 처음 상태는 꺼진 상태
+     */
+    public Light() {
+        this.lightState = offState;
+    }
+
+    /**
+     * @info 해당 행동을 통해 상태도 변경(on)
+     */
+    public void on() {
+        this.lightState.on();
+        this.lightState = onState;
+    }
+
+
+    /**
+     * @info 해당 행동을 통해 상태도 변경(off)
+     */
+    public void off() {
+        this.lightState.off();
+        this.lightState = offState;
+    }
+}
+
+~~~
+
+
+
+## LightState(State)
+
+~~~java
+public interface LightState {
+    public void on();
+    public void off();
+}
+~~~
+
+
+
+## OffState, OnState(StateA, StateB)
+
+~~~java
+public class OffState implements LightState {
+    @Override
+    public void on() {
+        System.out.println("Light ON");
+    }
+
+    @Override
+    public void off() {
+        System.out.println("Light Nothing");
+    }
+}
+
+
+public class OnState implements LightState {
+    @Override
+    public void on() {
+        System.out.println("Light Nothing");
+    }
+
+    @Override
+    public void off() {
+        System.out.println("Light Off");
+    }
+}
+~~~
+
+
+
+## Application
+
+~~~java
+public class Application {
+    public static void main(String[] args) {
+        Light light = new Light();
+        light.off();
+        light.off();
+
+        light.on();
+        light.on();
+
+        light.off();
+        light.on();
+    }
+}
+~~~
+
+---
+
+상태 패턴은 행동을 각 객체에 맞게 위임해주는 것은 전략 패턴과 매우 비슷하다. 
+
+하지만 전략 패턴의 경우 알고리즘을 변경해주는 것이고, 상태 패턴의 경우 이벤트가 발생했을 때 상태에 따라서 다르게 해주고 상태도 변경해준다.
+
+Ex. 전략 패턴의 경우 캐릭터에 따라 검을 휘두르거나 던질 수 있으나 상태 패턴에서는 캐릭터의 검이 캐릭터에 따라 총으로 변경될 수도 있는 것이다.
+
+---
+
+왜 쓰는가?
