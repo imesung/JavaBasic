@@ -145,6 +145,44 @@ public class ChatUser extends User{
 
 
 
+## GameMediator
+
+~~~java
+public class GameMediator extends Mediator{
+    @Override
+    public void mediate(String data) {
+        for(User user : users) {
+            //해당 메시지를 도연과 상연에게 메시지 전송
+            if(user.getName().equals("doyeon") || user.getName().equals("sanghyun")) {
+                user.handle(data);
+            }
+        }
+    }
+}
+
+~~~
+
+
+
+## GameUser
+
+~~~java
+public class GameUser extends User{
+
+    public GameUser(String name) {
+        super(name);
+    }
+
+    @Override
+    public void handle(String data) {
+        System.out.println("[게임 채널]");
+        System.out.println(this.getName() + data);
+    }
+}
+~~~
+
+
+
 ---
 
 **장점**
