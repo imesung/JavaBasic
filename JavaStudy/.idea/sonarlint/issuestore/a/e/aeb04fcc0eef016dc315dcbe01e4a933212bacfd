@@ -1,0 +1,8 @@
+
+J
+java:S1604"(Make this anonymous inner class a lambda(ó‰Áªüÿÿÿÿ8¢×ºĞ¨.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(í ôùÿÿÿÿ8¹Í°Ğ¨.
+Z	java:S106$"9Replace this use of System.out or System.err by a logger.(í ôùÿÿÿÿ8¿÷ÃĞ¨.
+K
+java:S1121".Extract the assignment out of this expression.(şºşÖ8¢×ºĞ¨.
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(£Çıÿÿÿÿ

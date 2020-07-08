@@ -280,8 +280,7 @@ public abstract class Subject {
 
   // 통보 대상(Observer) 추가
   public void attach(Observer observer) { observers.add(observer);}
-  // 통보 대상(Observer) 제거
-  public void detach(Observer observer) { observers.remove(observer);}
+  
   // 각 통보 대상(Observer)에 변경을 통보. (List<Observer>객체들의 update를 호출)
   public void notifyObservers() {
     for (Observer o : observers) {
@@ -383,3 +382,6 @@ public class Client {
 Observer 패턴을 이용하면 ScoreRecord 클래스의 코드를 변경하지 않고 새로운 클래스 및 객체를 추가/제거하는 것이 가능해지는 것이다.
 
 <img src="https://user-images.githubusercontent.com/40616436/83950739-f5f82680-a867-11ea-8442-66e8c0118666.png" alt="image" style="zoom:50%;" />
+
+https://gmlwjd9405.github.io/2018/07/08/observer-pattern.html
+
