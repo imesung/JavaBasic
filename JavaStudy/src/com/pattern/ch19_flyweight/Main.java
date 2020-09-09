@@ -24,7 +24,8 @@ public class Main {
 
 
         ///////////////////////////////////////////
-        String s1 = "hello";
+
+        /*String s1 = "hello";
         System.out.println(s1.hashCode());
         String s2 = "hello";
         System.out.println(s2.hashCode());
@@ -34,7 +35,7 @@ public class Main {
         String s4 = "hi";
         String s5 = s4.intern();
         System.out.println(s4.hashCode());
-        System.out.println(s5.hashCode());
+        System.out.println(s5.hashCode());*/
 
     }
 }
