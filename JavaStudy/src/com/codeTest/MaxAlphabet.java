@@ -4,6 +4,6 @@ package com.codeTest;
 //aabcde => a, abbccddd => d, abbccdd => b, abcabcd => a
 public class MaxAlphabet {
     public static void main(String[] args) {
-
+        Scanner sc = new Scanner(System.in);
     }
 }
