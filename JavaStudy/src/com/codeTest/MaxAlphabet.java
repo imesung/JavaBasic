@@ -5,5 +5,12 @@ package com.codeTest;
 public class MaxAlphabet {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+       String str = sc.nextLine();
+       String alpha = "abcdefghijklmnopqrstuvwxyz";
+       int [] result = new int [26];
+
+       
+
     }
 }
