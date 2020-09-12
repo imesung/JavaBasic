@@ -10,7 +10,13 @@ public class MaxAlphabet {
        String alpha = "abcdefghijklmnopqrstuvwxyz";
        int [] result = new int [26];
 
-       
+       for(int i; i < str.length(); i++) {
+           result[alpha.indexOf(str.charAt(i))]++;
+       }
+
+       //result.max 호출
+
+       System.out.println(alpha.charAy(max));
 
     }
 }
