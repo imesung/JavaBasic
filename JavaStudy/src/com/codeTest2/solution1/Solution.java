@@ -5,6 +5,6 @@ package com.codeTest2.solution1;
 //파이프는 번호마다 모양이 다름
 public class Solution {
     public static void main(String[] args) {
-
+        Scanner sc = new Scanner(System.in);
     }
 }
