@@ -8,9 +8,14 @@ public class Solution {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
+        int [][] pipeMap = {};
+        
+        pipeFunc(pipeMap);
+    }
+    
+    public static int pipeFunc(int [][] pipeMap) {
         int xDir = {0, 1, 0, -1};   //좌하우상
         int ydir = {1, 0, -1, 0};   //좌하우상
-        
         
     }
 }
