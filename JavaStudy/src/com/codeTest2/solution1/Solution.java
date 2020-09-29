@@ -10,12 +10,16 @@ public class Solution {
         
         int [][] pipeMap = {};
         
-        pipeFunc(pipeMap);
+        pipeFunc(pipeMap, 1, 1);
     }
     
-    public static int pipeFunc(int [][] pipeMap) {
+    public static int pipeFunc(int [][] pipeMap, int sX, int sY) {
         int xDir = {0, 1, 0, -1};   //좌하우상
         int ydir = {1, 0, -1, 0};   //좌하우상
         
+        //start X = sX, start Y = sY
+        
+        while(true) {
+        }
     }
 }
