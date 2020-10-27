@@ -1,0 +1,76 @@
+외부 업체와 데이터를 주고 받기 위해 AES256 암호화 서비스를 운영에 도입하기로 했다.
+
+ 
+
+AES256 암호화 도입하기 위한 과정
+32byte key값 설정 - 숫자 및 영문의 조합으로 되어 있는 32byte key 값을 설정한다.
+암복호화 메소드 구현
+ 
+
+***소스***
+```java
+private String getEncStr(String str) {
+  String infoLogStr = "str : " + str + ", custIp : " + CookieHelper.getCustIp();
+  String encStr = "";
+
+  if(StringUtils.isEmpty(str)){ 
+  	return encStr;
+  }
+  try{ 
+  	byte[] keyData = SECRET_KEY.getBytes(); 
+    SecretKey secureKey = new SecretKeySpec(keyData, "AES"); 
+    Cipher c = Cipher.getInstance("AES/CBC/PKCS5Padding"); 
+    c.init(Cipher.ENCRYPT_MODE, secureKey, new IvParameterSpec(IV.getBytes())); 
+    byte[] encrypted = c.doFinal(str.getBytes("UTF-8")); 
+    encStr = new String(Base64.encodeBase64(encrypted)); 
+  } catch(Exception e){ 
+  	LOGGER.error(infoLogStr+" | [에러] - " + e.toString()); 
+  }
+  
+  return encStr;
+}
+
+private String getDecStr(String str) {
+  String infoLogStr = "str : " + str + ", custIp : " + CookieHelper.getCustIp();
+  String decStr = "";
+
+  if(StringUtils.isEmpty(str)) { 
+  	return decStr; 
+  }
+  try { 
+  	byte[] keyData = SECRET_KEY.getBytes(); 
+    SecretKey secureKey = new SecretKeySpec(keyData, "AES"); 
+    Cipher c = Cipher.getInstance("AES/CBC/PKCS5Padding"); 
+    c.init(Cipher.DECRYPT_MODE, secureKey, new IvParameterSpec(IV.getBytes("UTF-8"))); 
+    byte[] byteStr = Base64.decodeBase64(str.getBytes()); 
+    decStr = new String(c.doFinal(byteStr),"UTF-8"); 
+  } catch(Exception e) { 
+  	LOGGER.error(infoLogStr+" | [에러] - " + e.toString());
+  }
+  
+  return decStr;
+}
+``` 
+
+***이슈 사항***
+테스트 서버에 배포 후 암호화 및 복호화 처리 되는 것을 확인했으나, 운영에 배포헸을 때 이슈가 발생하였다.
+
+바로 java.security.InvalidKeyException: Illegal key size 라는 오류 메시지가 나타났다.
+
+ 
+
+***확인 결과,***
+
+AES256은 한정된(1.6.0_45 이상은 지원) JDK 버전에서만 지원이 되고, 낮은 JDK 버전에서 AES256을 적용시키기 위해서는,
+
+경로 : <JAVA_HOME>/jre/lib/security 
+
+파일 : local_policy.jar, US_export_policy.jar
+
+해당 경로에 위 두 파일을 덮어씌워 줘야 한다.
+
+ 
+
+***참고***
+SHA256은 Java 버전에 상관없이 모두 지원된다.
+다음은 AES256, AES128, https의 차이를 확인해보자.
