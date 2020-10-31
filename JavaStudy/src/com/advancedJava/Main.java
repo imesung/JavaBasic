@@ -22,6 +22,12 @@ public class Main {
         HashSet<String> hs = new HashSet<String>();
         hs.contains("ss");
 
+        System.out.println("===========");
+
+        StringBuffer sf = new StringBuffer();
+        System.out.println(sf.indexOf(","));
+
+
     }
 
 }
