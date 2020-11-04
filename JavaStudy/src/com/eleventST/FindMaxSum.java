@@ -15,7 +15,51 @@ public class FindMaxSum {
     }
 
     public static int findMaxSum(List<Integer> list) {
-        list.sort(null);
-        return list.get(list.size()-1) + list.get(list.size()-2);
+
+        //배열로 변경
+        int [] arr = chgArr(list);
+
+        //퀵 정렬
+        sort(arr, 0, list.size()-1);
+
+        for(int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+        return arr[arr.length-2] + arr[arr.length-1];
     }
+
+    public static int [] chgArr(List<Integer> list) {
+        int [] arr = new int[list.size()];
+        for(int i = 0; i < list.size(); i++) {
+            arr[i] = list.get(i);
+        }
+        return arr;
+    }
+
+    public static void sort(int[] data, int start, int end){
+        int left = start;
+        int right = end;
+        int pivot = data[(start+end)/2];
+
+        while(left <= right) {
+            while(data[left] < pivot) left++;
+            while(data[right] > pivot) right--;
+            if(left <= right){
+                int temp = data[left];
+                data[left] = data[right];
+                data[right] = temp;
+                left++;
+                right--;
+            }
+        }
+
+        if(start < right) {
+            sort(data, start, right);
+        }
+        if(end > left) {
+            sort(data, left, end);
+        }
+    }
+
 }
