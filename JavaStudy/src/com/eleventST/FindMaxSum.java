@@ -43,8 +43,8 @@ public class FindMaxSum {
         int pivot = data[(start+end)/2];
 
         while(left <= right) {
-            while(data[left] < pivot) left++;
-            while(data[right] > pivot) right--;
+            while(data[left] < pivot) left++;   //피봇을 기준으로 왼쪽에서 값 확인
+            while(data[right] > pivot) right--;    //피봇을 기준으로 오른쪽에서 값 확인
             if(left <= right){
                 int temp = data[left];
                 data[left] = data[right];

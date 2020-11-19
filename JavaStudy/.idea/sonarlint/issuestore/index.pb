@@ -249,3 +249,11 @@ Y
 )src/com/codeTest2/solution4/Solution.java,3/7/37c0688697a7c1caa5e78bde37ea980bae8ffe64
 Y
 )src/com/codeTest2/solution1/Solution.java,3/9/39aac9595bb50669687b33886e14844d3da14ba6
+^
+.src/com/algorithmStudy/week01/strCompress.java,1/c/1c7b32c13801a929584c8f319cf682625df2e8cf
+[
++src/com/algorithmStudy/week01/openChat.java,0/1/01ca570a315797b47d711cbf216793be1782a4d8
+Q
+!src/com/eleventST/FindMaxSum.java,3/a/3a21d9efea183de5d7a195b492cea089145e7a61
+L
+src/com/eleventST/Queue.java,a/8/a8712d0d0717f0a167dba2f484cde6cf423a1d73

@@ -3,6 +3,7 @@ package com.eleventST;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 /*
 * implement a class Veterinarian that will be used as a part of a larger simulation of a veterinarian office.
@@ -21,6 +22,7 @@ public class Queue {
         Queue.accept("Mittens");
         System.out.println(Queue.heal());
         System.out.println(Queue.heal());
+        ArrayList
     }
 
     public static void accept(String petName) {
