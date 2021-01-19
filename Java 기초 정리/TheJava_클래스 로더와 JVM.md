@@ -1,6 +1,6 @@
 ## 클래스 로더와 JVM
 
-**Java 프로그램의 실행 과정**
+### **Java 프로그램의 실행 과정**
 
 1. Java 프로그램을 실행하면 JVM은 OS로 부터 메모리를 할당받는다.
 2. 작성한 .java 파일은 컴파일러에 의해 .class(바이트 코드) 파일로 변환된다.
@@ -9,7 +9,7 @@
 
 
 
-**클래스 로더**
+### **클래스 로더**
 
 ![image](https://user-images.githubusercontent.com/40616436/77852893-f945b500-721b-11ea-98e5-558f88ea2375.png)
 
@@ -31,7 +31,7 @@
 
 
 
-**JVM**
+### **JVM**
 
 ![image](https://user-images.githubusercontent.com/40616436/77852658-ca7b0f00-721a-11ea-8bdd-d1a805c9df84.png)
 
